@@ -1,0 +1,69 @@
+{% extends 'basee.html'%}
+{% block body %}
+<table class="table table-light">
+            
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Desc</th>
+        <th scope="col">Posted By</th>
+        <th scope="col">Location</th>
+        <th scope="col">Votes</th>
+        <th scope="col">Status</th>
+        <th scope="col">Post pate</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Estimate Completion Date</th>
+        <th scope="col">Actual Completion Date</th>
+        <th scope="col">VOTE</th>
+
+        <!-- {% if problem.Status in 'IP'%} -->
+        
+        <!-- {% endif %} -->
+      </tr>
+    
+    </thead>
+        <tbody>
+        {% for i in problems %}
+    
+    
+
+        <tr>
+            <th scope="row">{{i.prob_id}}</th>
+            <td>{{i.title}}</td>
+            <td>{{i.desc}}</td>
+            <td>{{i.postedby}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.votes}}</td>
+            <td>{{i.status}}</td>
+            
+            <td>{{i.postdate}}</td>
+            {% if i.status in 'IP' %}
+            <td>{{i.startdate}}</td>
+            <td>{{i.ecompletiondate}}</td>
+            {%else %}
+            <td>not in progress </td>
+            <td>not in progress</td>
+            {%endif%}
+
+            {% if i.acompletiondate not in 'None' %}
+            <td>{{i.acompletiondate}}</td>
+            {%else %}
+            <td>Will soon be completed</td>
+            <td><a href="vote/{{i.prob_id}}"><button type="submit"  class="btn btn-primary">VOTE </button></a></td>
+            {% endif %}
+            {% endfor %}
+            
+            
+            
+        
+
+            
+      </tr>
+      
+    </tbody>
+    
+   
+    
+  </table>
+{% endblock %}

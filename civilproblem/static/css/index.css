@@ -1,0 +1,32 @@
+@keyframes example {
+    from {color: red;}
+    to {color: yellow;}
+  }
+body{
+    background-image: url("https://blog.ipleaders.in/wp-content/uploads/2018/01/BV-Acharya-21.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+   }
+  
+.headcenter{
+    text-align: center;
+    height: 220px;
+    width: 1298px;
+    color: chartreuse;
+
+    animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: 3;}
+.imgleft{
+    position: relative;
+    top: -226px;
+    right: 1px;
+    height: 150px;
+    width: 173px;
+}
+.black{
+    background-color: black;
+    color: white;
+}

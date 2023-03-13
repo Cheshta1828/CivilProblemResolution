@@ -1,0 +1,38 @@
+{% extends 'basee.html' %}
+{% block body %}
+<h2>YOUR PROFILE </h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">adhaar number </th>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        
+
+      </tr>
+    </thead>
+    {%if request.user.is_authenticated %}
+    <tbody>
+
+      
+
+
+      
+      <tr>
+        <th scope="row">{{myuser.adhaar}}</th>
+        <td>{{myuser.user.username}}</td>
+        <td>{{myuser.city}}</td>
+        <td>{{myuser.address}}</td>
+        <td>{{myuser.user.email}}</td>
+        
+      </tr>
+  
+     
+        
+    </tbody>
+    {%endif%}
+  </table>
+  <a href="/editprofile/{{myuser.user.id}}" ><button type="submit" class="btn btn-primary">EDIT PROFILE </button></a>
+  {%endblock %}

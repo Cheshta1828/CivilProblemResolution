@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block th1 %}problem title{%endblock %}
+{% block th2 %}description{%endblock %}
+{% block th3 %} post date{%endblock %}
+{% block th4 %}posted by{%endblock %}
+{% block th5 %}location{%endblock %}
+{% block th6 %}votes{%endblock %}
+{% block th7 %}status{%endblock %}
+{% block th8 %}start working {%endblock %}
+{% block mytablebody %} 
+
+    {% for i in problems  %}
+    {%if  i.status in 'IC' %}
+    
+
+        <tr>
+            <th scope="row">{{i.title}}</th>
+            <td>{{i.desc}}</td>
+            <td>{{i.postdate}}</td>
+            <td>{{i.postedby}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.votes}}</td>
+            
+            <td >Pending</td>
+            <td><!-- Button trigger modal -->
+                <a href="startworking/{{i.prob_id}}"><button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                  START WORKING
+                </button></a>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div></td>
+
+            
+
+        </tr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

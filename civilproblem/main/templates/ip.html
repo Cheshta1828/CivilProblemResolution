@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block th1 %}problem title{%endblock %}
+{% block th2 %}description{%endblock %}
+{% block th3 %} post date{%endblock %}
+{% block th4 %}posted by{%endblock %}
+{% block th5 %}location{%endblock %}
+{% block th6 %}votes{%endblock %}
+{% block th7 %}status{%endblock %}
+{% block th8 %}DATE SCHEDULE {%endblock %}
+{% block mytablebody %} 
+
+    {% for i in problems  %}
+    {% if  i.status in 'IP' %}
+    
+
+        <tr>
+            <th scope="row">{{i.title}}</th>
+            <td>{{i.desc}}</td>
+            <td>{{i.postdate}}</td>
+            <td>{{i.postedby}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.votes}}</td>
+            
+            <td >Progress</td>
+            <td>                <a href="/schedule/{{i.prob_id}}">Date Schedule</a><br>
+            </td>
+
+            
+
+        </tr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

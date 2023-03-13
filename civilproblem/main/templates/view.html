@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block th1 %}Title{%endblock %}
+{% block th2 %}description<a>view</a>{%endblock %}
+{% block th3 %} Post Date{%endblock %}
+{% block th4 %}Posted by{%endblock %}
+{% block th5 %}Location{%endblock %}
+{% block th6 %}votes{%endblock %}
+
+{% block th7 %}status{%endblock %}
+{% block th8 %}Modify or delete  problem  {%endblock %}
+{% block mytablebody %} 
+    {% for i in problems  %}
+
+        <tr>
+            <th scope="row">{{i.title}}</th>
+            <td>{{i.desc}}</td>
+            <td>{{i.postdate}}</td>
+            <td>{{i.postedby}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.votes}}</td>
+            
+            <td >
+                {{i.status}}
+                
+                
+            </td>
+            <td>
+                <a href="/modify/{{i.prob_id}}">Modify </a><br>
+                <a href="/delete/{{i.prob_id}}">Delete </a>
+            </td>
+            
+            
+
+        </tr>
+
+
+
+
+        
+    {% endfor %}
+{% endblock %}
+{%block js %}
+
+{% endblock %}
+
+
+
+
+              
+              
+              
+            
+
+
+
+
+
+

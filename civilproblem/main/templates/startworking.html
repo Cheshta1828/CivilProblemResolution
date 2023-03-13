@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="card" style="width: 18rem;">
+  
+    
+    <div class="card-body">
+      <h5 class="card-title">{{problem.title}}</h5>
+    {% csrf_token %}
+      <form method="POST",action="startworking">
+        <div class="form-group">
+          <label for="sd"><b>ENTER START DATE </b></label>
+          <input type="date" class="form-control" name="sd" id="sd" aria-describedby="emailHelp" placeholder="Enter start date ">
+          
+        </div>
+        <div class="form-group">
+            <label for="ed"><b>ENTER ESTIMATION DATE </b></label>
+            <input type="date" class="form-control" name="ed" id="ed" aria-describedby="emailHelp" placeholder="Enter estimation date ">
+            
+          </div>
+         
+         
+        
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+
+{%endblock%}
